@@ -1,7 +1,6 @@
 // Proyecto de PSeInt: Preguntados
 Proceso Proyecto
 	menu;
-	Escribir "";
 FinProceso
 
 SubProceso menu
@@ -28,12 +27,15 @@ SubProceso menu
         FinSi
     FinSi
 	
+	Escribir "";
     Escribir "Hola ", nombre, ", tu nivel es: ", nivel;
+	Escribir "";
 	
 	Mientras opcionMenu <> 6 Hacer
 		puntaje <- 0;
-		Escribir "";
-		Escribir "=== TRIVIA ===";
+		Escribir "==================================";
+		Escribir "              TRIVIA";
+		Escribir "==================================";
 		Escribir "1. Trivia General";
 		Escribir "2. Trivia de Matemáticas";
 		Escribir "3. Trivia de Java";
@@ -55,7 +57,9 @@ SubProceso menu
 				triviaPython(nivel, puntaje);
 			6:
 			De Otro Modo:
-				Escribir "Opcion no valida.";
+				Escribir "Opcion no valida. Ingrese nuevamente";
+				Esperar Tecla;
+				Borrar Pantalla;
 		FinSegun
 	FinMientras
 FinSubProceso
