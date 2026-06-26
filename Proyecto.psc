@@ -1010,5 +1010,129 @@ SubProceso pyMostrarASCIIPuntaje100(puntajePartida, puntajeTotal)
 	escribir "11111111111¶¶¶¶¶¶______¶¶¶¶¶¶";
 FinSubProceso
 
+trivia de java
+
+import java.util.Scanner;
+
+public class TriviaJava {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int puntos = 0;
+int respuesta;
+
+System.out.println("=== TRIVIA DE JAVA ===");
+System.out.println("Cada respuesta correcta vale 1 punto.");
+System.out.println();
+
+// Pregunta 1
+System.out.println("1. ¿Qué palabra clave se usa para declarar una clase?");
+System.out.println("1) class");
+System.out.println("2) new");
+System.out.println("3) public");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 1) puntos++;
+
+// Pregunta 2
+System.out.println("\n2. ¿Cuál es el método principal de un programa Java?");
+System.out.println("1) start()");
+System.out.println("2) main()");
+System.out.println("3) run()");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 2) puntos++;
+
+// Pregunta 3
+System.out.println("\n3. ¿Qué tipo de dato almacena números enteros?");
+System.out.println("1) double");
+System.out.println("2) boolean");
+System.out.println("3) int");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 3) puntos++;
+
+// Pregunta 4
+System.out.println("\n4. ¿Qué clase se utiliza para leer datos del teclado?");
+System.out.println("1) Scanner");
+System.out.println("2) Input");
+System.out.println("3) ConsoleReader");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 1) puntos++;
+
+// Pregunta 5
+System.out.println("\n5. ¿Qué estructura se usa para decisiones?");
+System.out.println("1) for");
+System.out.println("2) if");
+System.out.println("3) while");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 2) puntos++;
+
+// Pregunta 6
+System.out.println("\n6. ¿Qué ciclo repite mientras una condición sea verdadera?");
+System.out.println("1) while");
+System.out.println("2) switch");
+System.out.println("3) if");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 1) puntos++;
+
+// Pregunta 7
+System.out.println("\n7. ¿Qué palabra crea un objeto?");
+System.out.println("1) object");
+System.out.println("2) new");
+System.out.println("3) create");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 2) puntos++;
+
+// Pregunta 8
+System.out.println("\n8. ¿Qué tipo de dato almacena verdadero o falso?");
+System.out.println("1) int");
+System.out.println("2) boolean");
+System.out.println("3) String");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 2) puntos++;
+
+// Pregunta 9
+System.out.println("\n9. ¿Qué instrucción muestra un mensaje en pantalla?");
+System.out.println("1) System.out.println()");
+System.out.println("2) print()");
+System.out.println("3) mostrar()");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 1) puntos++;
+
+// Pregunta 10
+System.out.println("\n10. ¿Qué estructura permite seleccionar entre varias opciones?");
+System.out.println("1) switch");
+System.out.println("2) if");
+System.out.println("3) while");
+System.out.print("Respuesta: ");
+respuesta = sc.nextInt();
+if (respuesta == 1) puntos++;
+
+// Resultado final
+System.out.println("\n=======================");
+System.out.println("Puntaje final: " + puntos + " / 10");
+
+if (puntos == 10) {
+System.out.println("¡Excelente! Obtuviste la puntuación máxima.");
+} else if (puntos >= 7) {
+System.out.println("¡Muy bien! Aprobaste la trivia.");
+} else if (puntos >= 5) {
+System.out.println("Buen intento. Sigue practicando.");
+} else {
+System.out.println("Necesitas estudiar un poco más Java.");
+}
+
+        sc.close();
+    }
+}
+	
+FinPara
+
 // -oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-
 
