@@ -1010,129 +1010,125 @@ SubProceso pyMostrarASCIIPuntaje100(puntajePartida, puntajeTotal)
 	escribir "11111111111¶¶¶¶¶¶______¶¶¶¶¶¶";
 FinSubProceso
 
-trivia de java
-
-import java.util.Scanner;
-
-public class TriviaJava {
-public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-int puntos = 0;
-int respuesta;
-
-System.out.println("=== TRIVIA DE JAVA ===");
-System.out.println("Cada respuesta correcta vale 1 punto.");
-System.out.println();
-
-// Pregunta 1
-System.out.println("1. ¿Qué palabra clave se usa para declarar una clase?");
-System.out.println("1) class");
-System.out.println("2) new");
-System.out.println("3) public");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 2
-System.out.println("\n2. ¿Cuál es el método principal de un programa Java?");
-System.out.println("1) start()");
-System.out.println("2) main()");
-System.out.println("3) run()");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 3
-System.out.println("\n3. ¿Qué tipo de dato almacena números enteros?");
-System.out.println("1) double");
-System.out.println("2) boolean");
-System.out.println("3) int");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 3) puntos++;
-
-// Pregunta 4
-System.out.println("\n4. ¿Qué clase se utiliza para leer datos del teclado?");
-System.out.println("1) Scanner");
-System.out.println("2) Input");
-System.out.println("3) ConsoleReader");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 5
-System.out.println("\n5. ¿Qué estructura se usa para decisiones?");
-System.out.println("1) for");
-System.out.println("2) if");
-System.out.println("3) while");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 6
-System.out.println("\n6. ¿Qué ciclo repite mientras una condición sea verdadera?");
-System.out.println("1) while");
-System.out.println("2) switch");
-System.out.println("3) if");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 7
-System.out.println("\n7. ¿Qué palabra crea un objeto?");
-System.out.println("1) object");
-System.out.println("2) new");
-System.out.println("3) create");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 8
-System.out.println("\n8. ¿Qué tipo de dato almacena verdadero o falso?");
-System.out.println("1) int");
-System.out.println("2) boolean");
-System.out.println("3) String");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 9
-System.out.println("\n9. ¿Qué instrucción muestra un mensaje en pantalla?");
-System.out.println("1) System.out.println()");
-System.out.println("2) print()");
-System.out.println("3) mostrar()");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 10
-System.out.println("\n10. ¿Qué estructura permite seleccionar entre varias opciones?");
-System.out.println("1) switch");
-System.out.println("2) if");
-System.out.println("3) while");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Resultado final
-System.out.println("\n=======================");
-System.out.println("Puntaje final: " + puntos + " / 10");
-
-if (puntos == 10) {
-System.out.println("¡Excelente! Obtuviste la puntuación máxima.");
-} else if (puntos >= 7) {
-System.out.println("¡Muy bien! Aprobaste la trivia.");
-} else if (puntos >= 5) {
-System.out.println("Buen intento. Sigue practicando.");
-} else {
-System.out.println("Necesitas estudiar un poco más Java.");
-}
-
-        sc.close();
-    }
-}
+Proceso Trivia_Java
 	
-FinPara
+    Definir respuesta Como Caracter
+    Definir puntaje Como Entero
+	
+    puntaje <- 0
+	
+    Escribir "=================================="
+    Escribir "      TRIVIA DE JAVA (10 PREGUNTAS)"
+    Escribir "=================================="
+	
+    // Pregunta 1
+    Escribir "1. ¿Java distingue entre mayúsculas y minúsculas?"
+    Escribir "A) No"
+    Escribir "B) Si"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "B" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 2
+    Escribir "2. ¿Qué palabra se usa para declarar una variable de tipo entero?"
+    Escribir "A) int"
+    Escribir "B) entero"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "A" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 3
+    Escribir "3. ¿Cuál es el punto de entrada de un programa en Java?"
+    Escribir "A) start()"
+    Escribir "B) main()"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "B" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 4
+    Escribir "4. ¿Qué clase se usa para leer datos desde el teclado?"
+    Escribir "A) Scanner"
+    Escribir "B) Console"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "A" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 5
+    Escribir "5. ¿Qué sentencia permite tomar decisiones?"
+    Escribir "A) if"
+    Escribir "B) for"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "A" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 6
+    Escribir "6. ¿Qué ciclo se ejecuta mientras una condición sea verdadera?"
+    Escribir "A) while"
+    Escribir "B) switch"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "A" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 7
+    Escribir "7. ¿Qué tipo de dato almacena verdadero o falso?"
+    Escribir "A) boolean"
+    Escribir "B) String"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "A" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 8
+    Escribir "8. ¿Qué palabra se usa para crear un objeto?"
+    Escribir "A) create"
+    Escribir "B) new"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "B" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 9
+    Escribir "9. ¿Qué estructura permite elegir entre varias opciones?"
+    Escribir "A) switch"
+    Escribir "B) while"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "A" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    // Pregunta 10
+    Escribir "10. ¿Qué tipo de dato almacena texto?"
+    Escribir "A) String"
+    Escribir "B) char"
+    Leer respuesta
+    Si Mayusculas(respuesta) = "A" Entonces
+        puntaje <- puntaje + 1
+    FinSi
+	
+    Escribir "=================================="
+    Escribir "Puntaje final: ", puntaje, " de 10"
+	
+    Si puntaje = 10 Entonces
+        Escribir "¡Excelente! Eres un experto en Java."
+    Sino
+        Si puntaje >= 7 Entonces
+            Escribir "¡Muy bien! Tienes buenos conocimientos."
+        Sino
+            Si puntaje >= 5 Entonces
+                Escribir "Bien. Sigue practicando."
+            Sino
+                Escribir "Necesitas estudiar un poco más Java."
+            FinSi
+        FinSi
+    FinSi
+
+FinProceso
 
 // -oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-
 
