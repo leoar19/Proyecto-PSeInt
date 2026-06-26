@@ -1,7 +1,6 @@
 // Proyecto de PSeInt: Preguntados
 Proceso Proyecto
 	menu;
-	Escribir "";
 FinProceso
 
 SubProceso menu
@@ -28,12 +27,15 @@ SubProceso menu
         FinSi
     FinSi
 	
+	Escribir "";
     Escribir "Hola ", nombre, ", tu nivel es: ", nivel;
+	Escribir "";
 	
 	Mientras opcionMenu <> 6 Hacer
 		puntaje <- 0;
-		Escribir "";
-		Escribir "=== TRIVIA ===";
+		Escribir "==================================";
+		Escribir "              TRIVIA";
+		Escribir "==================================";
 		Escribir "1. Trivia General";
 		Escribir "2. Trivia de Matemáticas";
 		Escribir "3. Trivia de Java";
@@ -50,14 +52,65 @@ SubProceso menu
 			2:
 				triviaMatematica(nivel,puntaje, preguntas, respuestas);
 			4:	
-				triviaJavaScript(nivel,puntaje,preguntas,respuestas);
+				triviaJavaScript(preguntas,respuestas);
 			5:
 				triviaPython(nivel, puntaje);
 			6:
 			De Otro Modo:
-				Escribir "Opcion no valida.";
+				Escribir "Opcion no valida. Ingrese nuevamente";
+				Esperar Tecla;
+				Borrar Pantalla;
 		FinSegun
 	FinMientras
+FinSubProceso
+
+SubProceso volverMenu
+	Esperar Tecla;
+	Borrar Pantalla;
+	Escribir "Volviendo al menu...";
+	Esperar Tecla;
+	Borrar Pantalla;
+FinSubProceso
+
+SubProceso jugarTrivia(preguntas,respuestas, puntaje Por Referencia)
+	Borrar Pantalla;
+	Escribir "=================";
+	Escribir "COMIENZA EL JUEGO";
+	Escribir "=================";
+	Esperar Tecla;
+	Definir i Como Entero;
+	Definir respuesta Como Cadena;
+	Para i <- 1 Hasta 10 Hacer
+		Borrar Pantalla;
+        Escribir "Pregunta ", i, ": ", preguntas[i];
+        Leer respuesta;
+		Si respuesta = respuestas[i] Entonces
+			Escribir "Correcto!";
+			puntaje <- puntaje + 1;
+		SiNo
+			Escribir "Incorrecto. Respuesta correcta: ", respuestas[i];
+		FinSi
+		Escribir "";
+		Esperar Tecla;
+    FinPara
+FinSubProceso
+
+SubProceso mostrarPuntaje(puntaje)
+	Borrar Pantalla;
+	Escribir "=================";
+	Escribir " RESULTADO FINAL";
+	Escribir "=================";
+    Escribir "Puntaje: ", puntaje, " de 10";
+	
+    Si puntaje >= 8 Entonces
+        Escribir "EXCELENTE, te felicito!";
+    Sino
+        Si puntaje >= 7 Entonces
+            Escribir "BIEN, DEBES ESFORZARTE MAS!";
+        Sino
+            Escribir "DEJA EL CELULAR Y ESTUDIA MAS!";
+        FinSi
+    FinSi
 FinSubProceso
 
 SubProceso triviaGeneral(nivel, puntaje, preguntas, respuestas)
@@ -164,39 +217,9 @@ SubProceso triviaGeneral(nivel, puntaje, preguntas, respuestas)
         FinSi
     FinSi
 	
-    Escribir "";
-    Escribir "=== COMIENZA EL JUEGO ===";
-	
-    Para i <- 1 Hasta 10 Hacer
-		
-        Escribir "Pregunta ", i, ": ", preguntas[i];
-        Leer respuesta;
-		
-        Si respuesta = respuestas[i] Entonces
-            Escribir "Correcto!";
-            puntaje <- puntaje + 1;
-        Sino
-            Escribir "Incorrecto. Respuesta correcta: ", respuestas[i];
-        FinSi
-		
-        Escribir "";
-		
-    FinPara
-	
-    Escribir "=== RESULTADO FINAL ===";
-    Escribir "Puntaje: ", puntaje, " de 10";
-	
-    Si puntaje >= 8 Entonces
-        Escribir "EXCELENTE, te felicito!";
-    Sino
-        Si puntaje >= 7 Entonces
-            Escribir "BIEN, DEBES ESFORZARTE MAS!";
-        Sino
-            Escribir "DEJA EL CELULAR Y ESTUDIA MAS!";
-        FinSi
-    FinSi
-	Escribir "";
-	Escribir "Volviendo al menu...";
+	jugarTrivia(preguntas,respuestas,puntaje);
+	mostrarPuntaje(puntaje);
+	volverMenu();
 FinSubProceso
 
 SubProceso triviaMatematica(nivel,puntaje, preguntas, respuestas)
@@ -296,42 +319,20 @@ SubProceso triviaMatematica(nivel,puntaje, preguntas, respuestas)
 		FinSi
 	FinSi
 	
-	Escribir "";
-    Escribir "=== COMIENZA EL JUEGO ===";
-	
-    Para i <- 1 Hasta 10 Hacer
-		
-        Escribir "Pregunta ", i, ": ", preguntas[i];
-        Leer respuesta;
-		
-        Si respuesta = respuestas[i] Entonces
-            Escribir "Correcto!";
-            puntaje <- puntaje + 1;
-        Sino
-            Escribir "Incorrecto. Respuesta correcta: ", respuestas[i];
-        FinSi
-		
-        Escribir "";
-		
-    FinPara
-	
-    Escribir "=== RESULTADO FINAL ===";
-    Escribir "Puntaje: ", puntaje, " de 10";
-	
-    Si puntaje >= 8 Entonces
-        Escribir "EXCELENTE, te felicito!";
-    Sino
-        Si puntaje >= 7 Entonces
-            Escribir "BIEN, DEBES ESFORZARTE MAS!";
-        Sino
-            Escribir "DEJA EL CELULAR Y ESTUDIA MAS!";
-        FinSi
-    FinSi
-	Escribir "";
-	
+	jugarTrivia(preguntas,respuestas,puntaje);
+	mostrarPuntaje(puntaje);
+	desafioMatematica();
+	volverMenu();
+FinSubProceso
+
+SubProceso desafioMatematica
+	Esperar Tecla;
+	Borrar Pantalla;
+	Definir i Como Entero;
 	Definir decision Como Cadena;
 	Escribir "¿Quieres hacer un desafio adicional? (si/no)";
 	Leer decision;
+	Escribir "";
 	Si decision = "si" Entonces
 		Definir j, matriz Como Entero;
 		Dimension matriz[3,2];
@@ -352,17 +353,41 @@ SubProceso triviaMatematica(nivel,puntaje, preguntas, respuestas)
 			FinPara
 			Escribir "";
 		FinPara
-		Escribir "La respuesta es...";
-		Esperar 3 Segundos;
-		Escribir "Error inesperado al leer la respuesta. ¡Tomalo como una oportunidad para investigar y aprender!";
-		Escribir "";
-	SiNo
-		Escribir "";
+		comprobarMatriz(matriz);
 	FinSi
-	Escribir "Volviendo al menu...";
 FinSubProceso
 
-SubProceso triviaJavaScript(nivel,puntaje,preguntas,respuestas)
+SubProceso comprobarMatriz(matriz)
+	Definir i,j,correcta Como Entero;
+	Dimension correcta[3,2];
+	Definir bien Como Logico;
+	bien <- Verdadero;
+	correcta[0,0] <- 1;
+	correcta[0,1] <- 4;
+	correcta[1,0] <- 2;
+	correcta[1,1] <- 5;
+	correcta[2,0] <- 3;
+	correcta[2,1] <- 6;
+	Para i <- 0 Hasta 2 Con Paso 1 Hacer
+		Para j <- 0 Hasta 1 Con Paso 1 Hacer
+			Si matriz[i,j] <> correcta[i,j] Entonces
+				bien <- Falso;
+			FinSi
+		FinPara
+	FinPara
+	
+	Si bien Entonces
+		Escribir "CORRECTO SUPERASTE EL DESAFIO ADICIONAL!";
+	SiNo
+		Escribir "Incorrecto. La respuesta es: ";
+		Escribir "| 1 4 |";
+		Escribir "| 2 5 |";
+		Escribir "| 3 6 |";
+		Escribir "Debes de seguir practicando!";
+	FinSi
+FinSubProceso
+
+SubProceso triviaJavaScript(preguntas,respuestas)
 	
 	Definir i, vidas Como Entero;
 	Definir respuesta Como Cadena;
@@ -510,9 +535,7 @@ SubProceso triviaJavaScript(nivel,puntaje,preguntas,respuestas)
 		
 	FinSi;
 	
-	Escribir "";
-	Escribir "Volviendo al menu...";
-	
+	volverMenu();
 FinSubProceso
 
 
@@ -873,7 +896,7 @@ SubProceso pyMostrarPuntaje(puntaje Por Referencia)
 	escribir "";
 	escribir "";
 	Escribir "(!) Presione cualquier tecla para volver al menu";
-	esperar tecla;
+	volverMenu();
 FinSubProceso
 
 SubProceso pyMostrarASCIIPuntaje0(puntajePartida, puntajeTotal)
@@ -1010,6 +1033,7 @@ SubProceso pyMostrarASCIIPuntaje100(puntajePartida, puntajeTotal)
 	escribir "11111111111¶¶¶¶¶¶______¶¶¶¶¶¶";
 FinSubProceso
 
+<<<<<<< HEAD
 Proceso Trivia_Java
 	
     Definir respuesta Como Caracter
@@ -1130,5 +1154,6 @@ Proceso Trivia_Java
 
 FinProceso
 
+=======
+>>>>>>> a495a0b5992b812a8cb0912727fcba0c494f6bb4
 // -oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-
-
