@@ -328,10 +328,17 @@ SubProceso triviaMatematica(nivel,puntaje, preguntas, respuestas)
         FinSi
     FinSi
 	Escribir "";
-	
+	desafioMatematica();
+FinSubProceso
+
+SubProceso desafioMatematica
+	Esperar Tecla;
+	Borrar Pantalla;
+	Definir i Como Entero;
 	Definir decision Como Cadena;
 	Escribir "¿Quieres hacer un desafio adicional? (si/no)";
 	Leer decision;
+	Escribir "";
 	Si decision = "si" Entonces
 		Definir j, matriz Como Entero;
 		Dimension matriz[3,2];
@@ -352,14 +359,38 @@ SubProceso triviaMatematica(nivel,puntaje, preguntas, respuestas)
 			FinPara
 			Escribir "";
 		FinPara
-		Escribir "La respuesta es...";
-		Esperar 3 Segundos;
-		Escribir "Error inesperado al leer la respuesta. ¡Tomalo como una oportunidad para investigar y aprender!";
-		Escribir "";
-	SiNo
-		Escribir "";
+		comprobarMatriz(matriz);
 	FinSi
-	Escribir "Volviendo al menu...";
+FinSubProceso
+
+SubProceso comprobarMatriz(matriz)
+	Definir i,j,correcta Como Entero;
+	Dimension correcta[3,2];
+	Definir bien Como Logico;
+	bien <- Verdadero;
+	correcta[0,0] <- 1;
+	correcta[0,1] <- 4;
+	correcta[1,0] <- 2;
+	correcta[1,1] <- 5;
+	correcta[2,0] <- 3;
+	correcta[2,1] <- 6;
+	Para i <- 0 Hasta 2 Con Paso 1 Hacer
+		Para j <- 0 Hasta 1 Con Paso 1 Hacer
+			Si matriz[i,j] <> correcta[i,j] Entonces
+				bien <- Falso;
+			FinSi
+		FinPara
+	FinPara
+	
+	Si bien Entonces
+		Escribir "CORRECTO SUPERASTE EL DESAFIO ADICIONAL!";
+	SiNo
+		Escribir "Incorrecto. La respuesta es: ";
+		Escribir "| 1 4 |";
+		Escribir "| 2 5 |";
+		Escribir "| 3 6 |";
+		Escribir "Debes de seguir practicando!";
+	FinSi
 FinSubProceso
 
 SubProceso triviaJavaScript(nivel,puntaje,preguntas,respuestas)
@@ -1010,129 +1041,4 @@ SubProceso pyMostrarASCIIPuntaje100(puntajePartida, puntajeTotal)
 	escribir "11111111111¶¶¶¶¶¶______¶¶¶¶¶¶";
 FinSubProceso
 
-trivia de java
-
-import java.util.Scanner;
-
-public class TriviaJava {
-public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-int puntos = 0;
-int respuesta;
-
-System.out.println("=== TRIVIA DE JAVA ===");
-System.out.println("Cada respuesta correcta vale 1 punto.");
-System.out.println();
-
-// Pregunta 1
-System.out.println("1. ¿Qué palabra clave se usa para declarar una clase?");
-System.out.println("1) class");
-System.out.println("2) new");
-System.out.println("3) public");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 2
-System.out.println("\n2. ¿Cuál es el método principal de un programa Java?");
-System.out.println("1) start()");
-System.out.println("2) main()");
-System.out.println("3) run()");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 3
-System.out.println("\n3. ¿Qué tipo de dato almacena números enteros?");
-System.out.println("1) double");
-System.out.println("2) boolean");
-System.out.println("3) int");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 3) puntos++;
-
-// Pregunta 4
-System.out.println("\n4. ¿Qué clase se utiliza para leer datos del teclado?");
-System.out.println("1) Scanner");
-System.out.println("2) Input");
-System.out.println("3) ConsoleReader");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 5
-System.out.println("\n5. ¿Qué estructura se usa para decisiones?");
-System.out.println("1) for");
-System.out.println("2) if");
-System.out.println("3) while");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 6
-System.out.println("\n6. ¿Qué ciclo repite mientras una condición sea verdadera?");
-System.out.println("1) while");
-System.out.println("2) switch");
-System.out.println("3) if");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 7
-System.out.println("\n7. ¿Qué palabra crea un objeto?");
-System.out.println("1) object");
-System.out.println("2) new");
-System.out.println("3) create");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 8
-System.out.println("\n8. ¿Qué tipo de dato almacena verdadero o falso?");
-System.out.println("1) int");
-System.out.println("2) boolean");
-System.out.println("3) String");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 2) puntos++;
-
-// Pregunta 9
-System.out.println("\n9. ¿Qué instrucción muestra un mensaje en pantalla?");
-System.out.println("1) System.out.println()");
-System.out.println("2) print()");
-System.out.println("3) mostrar()");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Pregunta 10
-System.out.println("\n10. ¿Qué estructura permite seleccionar entre varias opciones?");
-System.out.println("1) switch");
-System.out.println("2) if");
-System.out.println("3) while");
-System.out.print("Respuesta: ");
-respuesta = sc.nextInt();
-if (respuesta == 1) puntos++;
-
-// Resultado final
-System.out.println("\n=======================");
-System.out.println("Puntaje final: " + puntos + " / 10");
-
-if (puntos == 10) {
-System.out.println("¡Excelente! Obtuviste la puntuación máxima.");
-} else if (puntos >= 7) {
-System.out.println("¡Muy bien! Aprobaste la trivia.");
-} else if (puntos >= 5) {
-System.out.println("Buen intento. Sigue practicando.");
-} else {
-System.out.println("Necesitas estudiar un poco más Java.");
-}
-
-        sc.close();
-    }
-}
-	
-FinPara
-
 // -oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-
-
