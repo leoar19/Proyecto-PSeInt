@@ -49,6 +49,10 @@ SubProceso menu
 				triviaGeneral(nivel,puntaje, preguntas, respuestas);
 			2:
 				triviaMatematica(nivel,puntaje, preguntas, respuestas);
+				
+			4:	
+				triviaJavaScript(nivel,puntaje,preguntas,respuestas);	
+				
 			6:
 			De Otro Modo:
 				Escribir "Opcion no valida.";
@@ -357,4 +361,156 @@ SubProceso triviaMatematica(nivel,puntaje, preguntas, respuestas)
 	FinSi
 	Escribir "Volviendo al menu...";
 FinSubProceso
+
+SubProceso triviaJavaScript(nivel,puntaje,preguntas,respuestas)
 	
+	Definir i, vidas Como Entero;
+	Definir respuesta Como Cadena;
+	
+	vidas <- 3;
+	
+	preguntas[1] <- "¿Qué función muestra un mensaje en consola?";
+	respuestas[1] <- "1";
+	
+	preguntas[2] <- "¿Cómo se declara una variable moderna en JavaScript?";
+	respuestas[2] <- "2";
+	
+	preguntas[3] <- "¿Qué palabra clave se utiliza para declarar constantes?";
+	respuestas[3] <- "3";
+	
+	preguntas[4] <- "¿Qué símbolo se usa para comentarios de una línea?";
+	respuestas[4] <- "1";
+	
+	preguntas[5] <- "¿Qué método muestra una ventana emergente?";
+	respuestas[5] <- "2";
+	
+	preguntas[6] <- "¿Qué función solicita datos al usuario?";
+	respuestas[6] <- "1";
+	
+	preguntas[7] <- "¿Cómo se escribe correctamente una condición?";
+	respuestas[7] <- "3";
+	
+	preguntas[8] <- "¿Qué operador compara valor y tipo?";
+	respuestas[8] <- "2";
+	
+	preguntas[9] <- "¿Qué estructura repite instrucciones varias veces?";
+	respuestas[9] <- "1";
+	
+	preguntas[10] <- "¿Cómo se convierte un texto a número entero?";
+	respuestas[10] <- "3";
+	
+	Escribir "";
+	Escribir "================================";
+	Escribir "TRIVIA DE JAVASCRIPT";
+	Escribir "================================";
+	Escribir "Vidas disponibles: ", vidas;
+	Escribir "";
+	
+	Para i <- 1 Hasta 10 Hacer
+		
+		Si vidas > 0 Entonces
+			
+			Escribir "Pregunta ", i, ": ", preguntas[i];
+			
+			Segun i Hacer
+				
+				1:
+					Escribir "1. console.log()";
+					Escribir "2. consol.log()";
+					Escribir "3. console.lgo()";
+					
+				2:
+					Escribir "1. variable nombre;";
+					Escribir "2. let nombre;";
+					Escribir "3. vart nombre;";
+					
+				3:
+					Escribir "1. constant";
+					Escribir "2. constt";
+					Escribir "3. const";
+					
+				4:
+					Escribir "1. // comentario";
+					Escribir "2. \\ comentario";
+					Escribir "3. ## comentario";
+					
+				5:
+					Escribir "1. prompt()";
+					Escribir "2. alert()";
+					Escribir "3. alret()";
+					
+				6:
+					Escribir "1. prompt()";
+					Escribir "2. imput()";
+					Escribir "3. promt()";
+					
+				7:
+					Escribir "1. if x > 5";
+					Escribir "2. if x => 5";
+					Escribir "3. if (x > 5)";
+					
+				8:
+					Escribir "1. ==";
+					Escribir "2. ===";
+					Escribir "3. =";
+					
+				9:
+					Escribir "1. for";
+					Escribir "2. fro";
+					Escribir "3. iff";
+					
+				10:
+					Escribir "1. parseint()";
+					Escribir "2. ParseInt()";
+					Escribir "3. parseInt()";
+					
+			FinSegun;
+			
+			Leer respuesta;
+			
+			Si respuesta = respuestas[i] Entonces
+				
+				Escribir "¡¡CORRECTO!!";
+				
+			SiNo
+				
+				vidas <- vidas - 1;
+				
+				Escribir "INCORRECTO ~_~";
+				Escribir "Te quedan ", vidas, " vidas.";
+				
+				Si vidas = 0 Entonces
+					
+					Escribir "";
+					Escribir "====================";
+					Escribir "GAME OVER";
+					Escribir "Te has quedado sin vidas";
+					Escribir "====================";
+					
+					Esperar 2 Segundos;
+					
+				FinSi;
+				
+			FinSi;
+			
+			Escribir "";
+			
+		FinSi;
+		
+	FinPara;
+	
+	Si vidas > 0 Entonces
+		
+		Escribir "";
+		Escribir "================================";
+		Escribir "FELICIDADES";
+		Escribir "Has completado la Trivia de JavaScript";
+		Escribir "Vidas restantes: ", vidas;
+		Escribir "================================";
+		
+	FinSi;
+	
+	Escribir "";
+	Escribir "Volviendo al menu...";
+	
+FinSubProceso
