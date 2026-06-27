@@ -51,6 +51,8 @@ SubProceso menu
 				triviaGeneral(nivel,puntaje, preguntas, respuestas);
 			2:
 				triviaMatematica(nivel,puntaje, preguntas, respuestas);
+			3:
+				Trivia_Java(puntaje);
 			4:	
 				triviaJavaScript(preguntas,respuestas);
 			5:
@@ -1033,127 +1035,121 @@ SubProceso pyMostrarASCIIPuntaje100(puntajePartida, puntajeTotal)
 	escribir "11111111111¶¶¶¶¶¶______¶¶¶¶¶¶";
 FinSubProceso
 
-<<<<<<< HEAD
-Proceso Trivia_Java
+// -oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-
+
+SubProceso Trivia_Java(puntaje)
+    Definir respuesta Como Caracter;
 	
-    Definir respuesta Como Caracter
-    Definir puntaje Como Entero
-	
-    puntaje <- 0
-	
-    Escribir "=================================="
-    Escribir "      TRIVIA DE JAVA (10 PREGUNTAS)"
-    Escribir "=================================="
+    Escribir "==================================";
+    Escribir "      TRIVIA DE JAVA (10 PREGUNTAS)";
+    Escribir "==================================";
 	
     // Pregunta 1
-    Escribir "1. ¿Java distingue entre mayúsculas y minúsculas?"
-    Escribir "A) No"
-    Escribir "B) Si"
-    Leer respuesta
+    Escribir "1. ¿Java distingue entre mayúsculas y minúsculas?";
+    Escribir "A) No";
+    Escribir "B) Si";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "B" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 2
-    Escribir "2. ¿Qué palabra se usa para declarar una variable de tipo entero?"
-    Escribir "A) int"
-    Escribir "B) entero"
-    Leer respuesta
+    Escribir "2. ¿Qué palabra se usa para declarar una variable de tipo entero?";
+    Escribir "A) int";
+    Escribir "B) entero";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "A" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 3
-    Escribir "3. ¿Cuál es el punto de entrada de un programa en Java?"
-    Escribir "A) start()"
-    Escribir "B) main()"
-    Leer respuesta
+    Escribir "3. ¿Cuál es el punto de entrada de un programa en Java?";
+    Escribir "A) start()";
+    Escribir "B) main()";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "B" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 4
-    Escribir "4. ¿Qué clase se usa para leer datos desde el teclado?"
-    Escribir "A) Scanner"
-    Escribir "B) Console"
-    Leer respuesta
+    Escribir "4. ¿Qué clase se usa para leer datos desde el teclado?";
+    Escribir "A) Scanner";
+    Escribir "B) Console";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "A" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 5
-    Escribir "5. ¿Qué sentencia permite tomar decisiones?"
-    Escribir "A) if"
-    Escribir "B) for"
-    Leer respuesta
+    Escribir "5. ¿Qué sentencia permite tomar decisiones?";
+    Escribir "A) if";
+    Escribir "B) for";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "A" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 6
-    Escribir "6. ¿Qué ciclo se ejecuta mientras una condición sea verdadera?"
-    Escribir "A) while"
-    Escribir "B) switch"
-    Leer respuesta
+    Escribir "6. ¿Qué ciclo se ejecuta mientras una condición sea verdadera?";
+    Escribir "A) while";
+    Escribir "B) switch";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "A" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 7
-    Escribir "7. ¿Qué tipo de dato almacena verdadero o falso?"
-    Escribir "A) boolean"
-    Escribir "B) String"
-    Leer respuesta
+    Escribir "7. ¿Qué tipo de dato almacena verdadero o falso?";
+    Escribir "A) boolean";
+    Escribir "B) String";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "A" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 8
-    Escribir "8. ¿Qué palabra se usa para crear un objeto?"
-    Escribir "A) create"
-    Escribir "B) new"
-    Leer respuesta
+    Escribir "8. ¿Qué palabra se usa para crear un objeto?";
+    Escribir "A) create";
+    Escribir "B) new";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "B" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 9
-    Escribir "9. ¿Qué estructura permite elegir entre varias opciones?"
-    Escribir "A) switch"
-    Escribir "B) while"
-    Leer respuesta
+    Escribir "9. ¿Qué estructura permite elegir entre varias opciones?";
+    Escribir "A) switch";
+    Escribir "B) while";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "A" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
     // Pregunta 10
-    Escribir "10. ¿Qué tipo de dato almacena texto?"
-    Escribir "A) String"
-    Escribir "B) char"
-    Leer respuesta
+    Escribir "10. ¿Qué tipo de dato almacena texto?";
+    Escribir "A) String";
+    Escribir "B) char";
+    Leer respuesta;
     Si Mayusculas(respuesta) = "A" Entonces
-        puntaje <- puntaje + 1
+        puntaje <- puntaje + 1;
     FinSi
 	
-    Escribir "=================================="
-    Escribir "Puntaje final: ", puntaje, " de 10"
+    Escribir "==================================";
+    Escribir "Puntaje final: ", puntaje, " de 10";
 	
     Si puntaje = 10 Entonces
-        Escribir "¡Excelente! Eres un experto en Java."
+        Escribir "¡Excelente! Eres un experto en Java.";
     Sino
         Si puntaje >= 7 Entonces
-            Escribir "¡Muy bien! Tienes buenos conocimientos."
+            Escribir "¡Muy bien! Tienes buenos conocimientos.";
         Sino
             Si puntaje >= 5 Entonces
-                Escribir "Bien. Sigue practicando."
+                Escribir "Bien. Sigue practicando.";
             Sino
-                Escribir "Necesitas estudiar un poco más Java."
+                Escribir "Necesitas estudiar un poco más Java.";
             FinSi
         FinSi
     FinSi
-
-FinProceso
-
-=======
->>>>>>> a495a0b5992b812a8cb0912727fcba0c494f6bb4
-// -oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-oo-
+	
+	volverMenu();
+FinSubProceso
