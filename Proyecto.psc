@@ -60,17 +60,19 @@ SubProceso menu
 			6:
 			De Otro Modo:
 				Escribir "Opcion no valida. Ingrese nuevamente";
-				Esperar Tecla;
+				Esperar 3 segundos;
 				Borrar Pantalla;
 		FinSegun
 	FinMientras
 FinSubProceso
 
 SubProceso volverMenu
-	Esperar Tecla;
+	escribir "";
+	Escribir "(!) Presione cualquier tecla para volver al menu";
+	Esperar tecla;
 	Borrar Pantalla;
 	Escribir "Volviendo al menu...";
-	Esperar Tecla;
+	Esperar 1 segundo;
 	Borrar Pantalla;
 FinSubProceso
 
@@ -79,7 +81,7 @@ SubProceso jugarTrivia(preguntas,respuestas, puntaje Por Referencia)
 	Escribir "=================";
 	Escribir "COMIENZA EL JUEGO";
 	Escribir "=================";
-	Esperar Tecla;
+	Esperar 2 segundos;
 	Definir i Como Entero;
 	Definir respuesta Como Cadena;
 	Para i <- 1 Hasta 10 Hacer
@@ -93,7 +95,8 @@ SubProceso jugarTrivia(preguntas,respuestas, puntaje Por Referencia)
 			Escribir "Incorrecto. Respuesta correcta: ", respuestas[i];
 		FinSi
 		Escribir "";
-		Esperar Tecla;
+		escribir "(!) Presione cualquier tecla para continuar";
+		Esperar tecla;
     FinPara
 FinSubProceso
 
@@ -328,16 +331,18 @@ SubProceso triviaMatematica(nivel,puntaje, preguntas, respuestas)
 FinSubProceso
 
 SubProceso desafioMatematica
-	Esperar Tecla;
+	Escribir "";
+	Escribir "(!) Presione cualquier tecla para continuar";
+	esperar tecla;
 	Borrar Pantalla;
 	Definir i Como Entero;
 	Definir decision Como Cadena;
 	Escribir "¿Quieres hacer un desafio adicional? (si/no)";
 	Leer decision;
-	Escribir "";
 	Si decision = "si" Entonces
 		Definir j, matriz Como Entero;
 		Dimension matriz[3,2];
+		Escribir "";
 		Escribir "Escribir la transpuesta de la siguiente matriz: ";
 		Escribir "| 1 2 3 |";
 		Escribir "| 4 5 6 |";
@@ -498,6 +503,7 @@ SubProceso triviaJavaScript(preguntas,respuestas)
 			Si respuesta = respuestas[i] Entonces
 				
 				Escribir "¡¡CORRECTO!!";
+				Escribir "";
 				
 			SiNo
 				
@@ -519,8 +525,6 @@ SubProceso triviaJavaScript(preguntas,respuestas)
 				FinSi;
 				
 			FinSi;
-			
-			Escribir "";
 			
 		FinSi;
 		
@@ -896,8 +900,6 @@ SubProceso pyMostrarPuntaje(puntaje Por Referencia)
 		FinSi
 	FinSi
 	escribir "";
-	escribir "";
-	Escribir "(!) Presione cualquier tecla para volver al menu";
 	volverMenu();
 FinSubProceso
 
